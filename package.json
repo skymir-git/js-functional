@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "run": "go"
   },
   "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.0.5"
+  }
 }

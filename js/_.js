@@ -177,5 +177,3 @@ var _count_by = _curryr(function (data, iter) {
     {}
   );
 });
-
-var pairs = _map((val, key) => [key, val]);

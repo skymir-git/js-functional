@@ -194,7 +194,7 @@ _go(
 
 _go(users, _count_by(_pipe(_get("name"), _head)), console.log);
 
-console.log(pairs(users[0]));
+console.log(_pairs(users[0]));
 
 console.clear();
 

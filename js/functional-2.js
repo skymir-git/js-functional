@@ -149,3 +149,61 @@ _go(
   _max_by(_get("age")),
   console.log
 );
+
+console.clear();
+
+_go(users, _group_by(_get("age")), console.log);
+
+_go(
+  users,
+  _group_by(function (user) {
+    return user.age - (user.age % 10);
+  }),
+  console.log
+);
+
+_go(
+  users,
+  _group_by(function (user) {
+    return user.name[0];
+  }),
+  console.log
+);
+
+_go(users, _group_by(_pipe(_get("name"), _head)), console.log);
+
+console.log(
+  _count_by(users, function (user) {
+    return user.age;
+  })
+);
+
+console.log(
+  _count_by(users, function (user) {
+    return user.age - (user.age % 10);
+  })
+);
+
+_go(
+  users,
+  _count_by(function (user) {
+    return user.name[0];
+  }),
+  console.log
+);
+
+_go(users, _count_by(_pipe(_get("name"), _head)), console.log);
+
+console.log(pairs(users[0]));
+
+console.clear();
+
+_go(
+  users,
+  _filter((user) => user.age <= 30),
+  _count_by(function (user) {
+    return user.age - (user.age % 10);
+  }),
+  _map((count, key) => `${key}대는 ${count}명 입니다.`),
+  console.log
+);
